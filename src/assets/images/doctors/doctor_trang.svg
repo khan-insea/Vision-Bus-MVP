@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGlowTrang" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F8FAF9" />
+      <stop offset="50%" stop-color="#EFF6F3" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+
+    <!-- Skin Gradient -->
+    <linearGradient id="skinTrang" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FDE8DE" />
+      <stop offset="100%" stop-color="#F2C8B4" />
+    </linearGradient>
+
+    <!-- Light Blue Shirt -->
+    <linearGradient id="blueShirt" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#BAE6FD" />
+      <stop offset="100%" stop-color="#7DD3FC" />
+    </linearGradient>
+
+    <!-- Red Heart Badge -->
+    <linearGradient id="redHeartTrang" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EF4444" />
+      <stop offset="100%" stop-color="#B91C1C" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="800" fill="url(#bgGlowTrang)" />
+  <circle cx="300" cy="320" r="280" fill="#009B4E" opacity="0.04" />
+
+  <g transform="translate(0, 30)">
+    <!-- BACK HAIR (SHOULDER LENGTH BLACK HAIR) -->
+    <path d="M 200 180 C 180 260, 190 380, 215 450 L 385 450 C 410 380, 420 260, 400 180 Z" fill="#1C1917" />
+
+    <!-- NECK & LIGHT BLUE COLLAR SHIRT -->
+    <!-- Neck -->
+    <path d="M 270 270 L 330 270 L 338 340 L 262 340 Z" fill="url(#skinTrang)" />
+    <!-- Neck shadow under chin -->
+    <path d="M 265 285 Q 300 305 335 285 L 338 308 Q 300 322 262 308 Z" fill="#E2A68C" opacity="0.5" />
+
+    <!-- Light Blue Collar Shirt -->
+    <path d="M 245 328 L 285 365 L 300 330 L 245 328 Z" fill="url(#blueShirt)" stroke="#0284C7" stroke-width="1.2" />
+    <path d="M 355 328 L 315 365 L 300 330 L 355 328 Z" fill="url(#blueShirt)" stroke="#0284C7" stroke-width="1.2" />
+    <!-- Inner Shirt Placket -->
+    <path d="M 292 330 L 308 330 L 305 450 L 295 450 Z" fill="#E0F2FE" />
+
+    <!-- HEAD & FACE -->
+    <!-- Head Oval Base -->
+    <path d="M 230 185 C 230 115, 370 115, 370 185 C 370 255, 348 285, 300 285 C 252 285, 230 255, 230 185 Z" fill="url(#skinTrang)" />
+
+    <!-- Ears & Gold Hoop Earring -->
+    <ellipse cx="228" cy="200" rx="10" ry="18" fill="#F2C8B4" />
+    <ellipse cx="372" cy="200" rx="10" ry="18" fill="#F2C8B4" />
+    <!-- Gold Hoop Earring on Left Ear (Viewer's Right) -->
+    <circle cx="376" cy="212" r="5" fill="none" stroke="#F59E0B" stroke-width="2" />
+
+    <!-- SHOULDER-LENGTH HAIR FRONT & SIDE BANGS -->
+    <path d="M 220 180 C 215 120, 245 95, 300 90 C 355 95, 385 120, 380 180 C 375 220, 395 320, 415 420 C 385 410, 370 300, 365 220 C 340 180, 260 180, 235 220 C 230 300, 215 410, 185 420 C 205 320, 225 220, 220 180 Z" fill="#1C1917" />
+
+    <!-- Hair Part & Soft Gloss Highlights -->
+    <path d="M 240 130 C 275 110, 325 110, 360 130" stroke="#292524" stroke-width="4" fill="none" />
+    <path d="M 255 145 Q 285 125 315 130" stroke="#44403C" stroke-width="2" fill="none" />
+
+    <!-- Delicate Eyebrows -->
+    <path d="M 252 165 Q 270 158 286 165" stroke="#292524" stroke-width="3.5" stroke-linecap="round" fill="none" />
+    <path d="M 314 165 Q 330 158 348 165" stroke="#292524" stroke-width="3.5" stroke-linecap="round" fill="none" />
+
+    <!-- Bright Friendly Eyes -->
+    <!-- Left Eye -->
+    <ellipse cx="268" cy="180" rx="13" ry="9" fill="#FFFFFF" />
+    <circle cx="269" cy="180" r="6" fill="#1C1917" />
+    <circle cx="271" cy="178" r="2" fill="#FFFFFF" />
+    <path d="M 252 174 Q 268 167 284 174" stroke="#1C1917" stroke-width="2.5" fill="none" />
+
+    <!-- Right Eye -->
+    <ellipse cx="332" cy="180" rx="13" ry="9" fill="#FFFFFF" />
+    <circle cx="331" cy="180" r="6" fill="#1C1917" />
+    <circle cx="333" cy="178" r="2" fill="#FFFFFF" />
+    <path d="M 316 174 Q 332 167 348 174" stroke="#1C1917" stroke-width="2.5" fill="none" />
+
+    <!-- Gentle Nose -->
+    <path d="M 298 178 L 296 210 Q 300 215 304 210" stroke="#E2A68C" stroke-width="3" stroke-linecap="round" fill="none" />
+
+    <!-- Warm Soft Smile -->
+    <path d="M 270 238 Q 300 262 330 238 Q 300 250 270 238 Z" fill="#FFFFFF" stroke="#BE123C" stroke-width="1.2" />
+    <path d="M 266 236 Q 300 265 334 236" stroke="#E11D48" stroke-width="3" fill="none" stroke-linecap="round" />
+
+    <!-- WHITE LAB COAT -->
+    <!-- Body / Coat Layout -->
+    <path d="M 130 420 L 220 340 L 260 340 L 295 440 L 305 440 L 340 340 L 380 340 L 470 420 L 500 750 L 100 750 Z" fill="#FFFFFF" />
+    <path d="M 130 420 L 220 340 L 260 340 L 295 440 L 305 440 L 340 340 L 380 340 L 470 420 L 500 750 L 100 750 Z" fill="#F8FAFC" opacity="0.6" />
+
+    <!-- Coat Lapels -->
+    <path d="M 220 340 L 275 445 L 215 465 L 198 405 Z" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" />
+    <path d="M 380 340 L 325 445 L 385 465 L 402 405 Z" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2" />
+
+    <!-- CROSSED ARMS -->
+    <!-- Left Arm/Sleeve across -->
+    <path d="M 115 440 Q 220 500 375 515 L 355 615 Q 200 595 105 515 Z" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2" />
+    <!-- Right Arm/Sleeve across -->
+    <path d="M 485 440 Q 380 505 225 520 L 240 620 Q 395 605 495 515 Z" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2" />
+
+    <!-- Hands & Colorful Bracelet on Right Wrist -->
+    <path d="M 365 510 C 385 510, 400 525, 390 550 C 380 570, 355 565, 345 545 Z" fill="url(#skinTrang)" />
+    <path d="M 215 515 C 195 515, 180 530, 190 555 C 200 575, 225 570, 235 550 Z" fill="url(#skinTrang)" />
+
+    <!-- Bracelet on Wrist (Viewer's Left Wrist) -->
+    <g transform="translate(225, 510)">
+      <ellipse cx="0" cy="15" rx="8" ry="16" fill="none" stroke="#F59E0B" stroke-width="3" />
+      <circle cx="-5" cy="5" r="3" fill="#EF4444" />
+      <circle cx="2" cy="12" r="3" fill="#3B82F6" />
+      <circle cx="-3" cy="22" r="3" fill="#10B981" />
+    </g>
+
+    <!-- BADGES & INSIGNIA ON COAT (VIEWER'S LEFT - COAT RIGHT CHEST) -->
+    <g transform="translate(210, 420)">
+      <!-- Red Patient Care+ Heart Pin -->
+      <path d="M 12 0 C 6 -8, -6 -2, 0 8 C 6 16, 12 20, 12 22 C 12 20, 18 16, 24 8 C 30 -2, 18 -8, 12 0 Z" fill="url(#redHeartTrang)" />
+      <text x="12" y="10" font-family="sans-serif" font-size="5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Care+</text>
+
+      <!-- Bệnh Viện Mắt Sài Gòn Green Cross Badge -->
+      <g transform="translate(-10, 28)">
+        <rect x="10" y="0" width="16" height="16" rx="3" fill="#009B4E" />
+        <!-- Cross / Eye Icon -->
+        <path d="M 18 3 L 18 13 M 13 8 L 23 8" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" />
+        <ellipse cx="18" cy="8" rx="4" ry="2.5" fill="#FFFFFF" />
+        <circle cx="18" cy="8" r="1.2" fill="#009B4E" />
+        <text x="18" y="22" font-family="sans-serif" font-size="4" font-weight="900" fill="#009B4E" text-anchor="middle">MẮT SÀI GÒN</text>
+      </g>
+    </g>
+  </g>
+</svg>

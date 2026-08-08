@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="100%" height="100%">
+  <!-- Green Medical Cross -->
+  <rect x="23" y="0" width="34" height="80" fill="#009B4E" rx="4" />
+  <rect x="0" y="23" width="80" height="34" fill="#009B4E" rx="4" />
+
+  <!-- Stylized White Eye Contour inside the cross -->
+  <!-- Upper Eyelid curve -->
+  <path d="M 10 53 C 10 29, 42 24, 67 53" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" fill="none" />
+  <!-- Left bottom horizontal line -->
+  <path d="M 10 53 L 35 53" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" fill="none" />
+  <!-- Right lower vertical indicator -->
+  <path d="M 67 53 L 67 58" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" fill="none" />
+  <!-- Central Pupil/Iris Circle -->
+  <circle cx="43" cy="40" r="13.5" stroke="#FFFFFF" stroke-width="4" fill="none" />
+</svg>

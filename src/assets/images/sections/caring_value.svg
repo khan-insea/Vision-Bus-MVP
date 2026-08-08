@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#EBF9F1" rx="16" />
+  <circle cx="200" cy="130" r="70" fill="#E74C3C" opacity="0.1" />
+  
+  <g transform="translate(130, 60)">
+    <!-- Heart & Hand icon -->
+    <path d="M 70 110 C 70 50, -10 50, -10 110 C -10 160, 70 200, 70 215 C 70 200, 150 160, 150 110 C 150 50, 70 50, 70 110 Z" fill="#FFFFFF" stroke="#E74C3C" stroke-width="5" transform="scale(0.7) translate(30, -10)" />
+    
+    <!-- Gentle medical hand supporting the heart -->
+    <path d="M 30 115 C 40 100, 60 90, 80 100 C 90 105, 100 115, 115 110 C 120 105, 130 95, 125 125 C 120 155, 65 155, 30 115 Z" fill="#FCE0D6" />
+    <path d="M 20 135 L 50 145 C 55 145, 65 145, 75 140" stroke="#E74C3C" stroke-width="3" stroke-linecap="round" fill="none" />
+  </g>
+  
+  <text x="200" y="245" fill="#153324" font-family="system-ui, sans-serif" font-weight="bold" font-size="18" text-anchor="middle">TẬN TÂM PHỤC VỤ</text>
+  <text x="200" y="270" fill="#E74C3C" font-family="system-ui, sans-serif" font-weight="600" font-size="13" text-anchor="middle">Khám Mắt Bằng Cả Trái Tim Người Thầy Thuốc</text>
+</svg>

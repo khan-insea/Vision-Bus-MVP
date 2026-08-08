@@ -1,0 +1,6 @@
+{
+  "name": "Vision Bus - Sáng Mắt Sáng Niềm Tin",
+  "description": "Landing page giới thiệu hành trình khám mắt lưu động Vision Bus của Bệnh viện Mắt Sài Gòn Kiên Giang - Mang ánh sáng đến với cộng đồng.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

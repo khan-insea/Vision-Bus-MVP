@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <rect width="100%" height="100%" fill="#F4FAF7"/>
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E8F6F0" />
+      <stop offset="100%" stop-color="#FFFFFF" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#skyGrad)" />
+  
+  <!-- Mountains/Hills background in Kiên Giang -->
+  <path d="M -100 450 Q 200 300 500 420 T 1000 380 L 1000 600 L -100 600 Z" fill="#C3E8D5" opacity="0.3" />
+  <path d="M -50 480 Q 350 380 700 460 T 1100 440 L 1100 600 L -50 600 Z" fill="#A9DFBF" opacity="0.4" />
+
+  <!-- Coconut Trees Silhouette -->
+  <g transform="translate(100, 300)" opacity="0.5">
+    <path d="M 20 150 Q 30 50 80 0" stroke="#153324" stroke-width="6" fill="none" />
+    <path d="M 80 0 Q 30 -30 10 -10 Q 50 -10 80 0" fill="#009B4E" />
+    <path d="M 80 0 Q 130 -30 150 -10 Q 100 -10 80 0" fill="#009B4E" />
+    <path d="M 80 0 Q 100 40 130 60 Q 90 20 80 0" fill="#009B4E" />
+  </g>
+
+  <!-- The Vision Bus Vector Illustration -->
+  <g transform="translate(200, 220)">
+    <!-- Wheels shadow -->
+    <ellipse cx="120" cy="230" rx="45" ry="12" fill="#153324" opacity="0.2" />
+    <ellipse cx="320" cy="230" rx="45" ry="12" fill="#153324" opacity="0.2" />
+
+    <!-- Bus Body Base -->
+    <path d="M 30 50 L 380 50 Q 420 50 420 100 L 420 200 L 20 200 L 20 100 Q 20 50 30 50 Z" fill="#FFFFFF" stroke="#009B4E" stroke-width="8" />
+    <!-- Bus Lower half paint green -->
+    <path d="M 20 130 L 420 130 L 420 200 L 20 200 Z" fill="#009B4E" />
+
+    <!-- Sài Gòn Medical Cross on side of Bus -->
+    <g transform="translate(200, 110)" stroke="#FFFFFF" stroke-width="2" fill="none">
+      <rect x="25" y="0" width="20" height="50" fill="#FFFFFF" />
+      <rect x="10" y="15" width="50" height="20" fill="#FFFFFF" />
+    </g>
+
+    <!-- Wheels -->
+    <circle cx="120" cy="210" r="32" fill="#153324" />
+    <circle cx="120" cy="210" r="14" fill="#E8F6F0" />
+    <circle cx="320" cy="210" r="32" fill="#153324" />
+    <circle cx="320" cy="210" r="14" fill="#E8F6F0" />
+
+    <!-- Windshield & Windows -->
+    <path d="M 350 70 L 405 70 L 405 120 L 350 120 Z" fill="#E8F6F0" stroke="#009B4E" stroke-width="4" />
+    <rect x="270" y="70" width="60" height="50" rx="5" fill="#E8F6F0" stroke="#009B4E" stroke-width="4" />
+    <rect x="190" y="70" width="60" height="50" rx="5" fill="#E8F6F0" stroke="#009B4E" stroke-width="4" />
+    <rect x="110" y="70" width="60" height="50" rx="5" fill="#E8F6F0" stroke="#009B4E" stroke-width="4" />
+    <rect x="30" y="70" width="60" height="50" rx="5" fill="#E8F6F0" stroke="#009B4E" stroke-width="4" />
+
+    <!-- Headlights -->
+    <circle cx="415" cy="165" r="12" fill="#F4D03F" />
+    <!-- Brand Name Text on Bus -->
+    <text x="210" y="180" fill="#FFFFFF" font-family="system-ui, sans-serif" font-weight="900" font-size="20" text-anchor="middle" letter-spacing="4">VISION BUS</text>
+  </g>
+
+  <!-- Road Line -->
+  <line x1="50" y1="450" x2="750" y2="450" stroke="#009B4E" stroke-width="6" stroke-dasharray="15 10" />
+
+  <!-- Title Text -->
+  <text x="400" y="520" fill="#153324" font-family="system-ui, sans-serif" font-weight="bold" font-size="28" text-anchor="middle">HÀNH TRÌNH VƯỢT SÔNG VƯỢT BIỂN</text>
+  <text x="400" y="560" fill="#009B4E" font-family="system-ui, sans-serif" font-weight="600" font-size="18" text-anchor="middle">Mang Ánh Sáng Đến Mọi Miền Tổ Quốc</text>
+</svg>

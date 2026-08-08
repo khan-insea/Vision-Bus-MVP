@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="100%" height="100%">
+  <!-- Left Side: Official Stylized Medical Cross with Eye Contour -->
+  <g transform="translate(10, 10)">
+    <!-- Green Medical Cross -->
+    <rect x="23" y="0" width="34" height="80" fill="#009B4E" rx="4" />
+    <rect x="0" y="23" width="80" height="34" fill="#009B4E" rx="4" />
+
+    <!-- Stylized White Eye Contour inside the cross -->
+    <!-- Upper Eyelid curve -->
+    <path d="M 10 53 C 10 29, 42 24, 67 53" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" fill="none" />
+    <!-- Left bottom horizontal line -->
+    <path d="M 10 53 L 35 53" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" fill="none" />
+    <!-- Right lower vertical indicator -->
+    <path d="M 67 53 L 67 58" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" fill="none" />
+    <!-- Central Pupil/Iris Circle -->
+    <circle cx="43" cy="40" r="13.5" stroke="#FFFFFF" stroke-width="4" fill="none" />
+  </g>
+
+  <!-- Right Side: Brand Typography -->
+  <g transform="translate(105, 12)">
+    <!-- Top thin divider -->
+    <line x1="0" y1="12" x2="275" y2="12" stroke="#414042" stroke-width="1.5" stroke-linecap="round" opacity="0.8" />
+    
+    <!-- "BỆNH VIỆN MẮT" -->
+    <text x="0" y="27" fill="#414042" font-family="'Be Vietnam Pro', 'Inter', sans-serif" font-weight="600" font-size="12" letter-spacing="3.2" text-anchor="start">BỆNH VIỆN MẮT</text>
+    
+    <!-- Bottom thin divider -->
+    <line x1="0" y1="34" x2="275" y2="34" stroke="#414042" stroke-width="1.5" stroke-linecap="round" opacity="0.8" />
+
+    <!-- Brand name main text group -->
+    <g transform="translate(0, 62)">
+      <!-- "SÀI GÒN" in highlight green -->
+      <text x="0" y="0" fill="#009B4E" font-family="'Be Vietnam Pro', 'Inter', sans-serif" font-weight="900" font-size="22" letter-spacing="1">SÀI GÒN</text>
+      
+      <!-- Divider line -->
+      <line x1="110" y1="-18" x2="110" y2="2" stroke="#CBD5E1" stroke-width="1.5" />
+      
+      <!-- "KIÊN GIANG" in dark gray -->
+      <text x="122" y="-5" fill="#414042" font-family="'Be Vietnam Pro', 'Inter', sans-serif" font-weight="800" font-size="12" letter-spacing="1">KIÊN GIANG</text>
+    </g>
+  </g>
+</svg>
