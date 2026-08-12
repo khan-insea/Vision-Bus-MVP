@@ -6,9 +6,7 @@
 import { memo } from 'react';
 import { motion } from 'motion/react';
 import { Bookmark, ArrowRight } from 'lucide-react';
-
-// Optimized background image representing mobile eye clinic & medical mission
-const bgImage = 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=75&w=1200&auto=format&fit=crop';
+import { galleryBus } from '../assets/images';
 
 function SectionValues() {
   return (
@@ -19,7 +17,7 @@ function SectionValues() {
       {/* Layer 1: Background Image Layer */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
         <img
-          src={bgImage}
+          src={galleryBus}
           alt="Vision Bus Eye Care Mission"
           width={1200}
           height={800}
