@@ -65,10 +65,6 @@ function SectionJourney() {
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-dark/50 via-transparent to-transparent opacity-80" />
-            <div className="absolute bottom-3 sm:bottom-6 left-3 sm:left-6 right-3 sm:right-6 text-white text-[11px] sm:text-sm font-bold truncate">
-              Chuyến xe lưu động Vision Bus bánh lăn trên mọi nẻo đường miền Tây
-            </div>
           </div>
         </motion.div>
 

@@ -254,38 +254,56 @@ export const pressItems: PressItem[] = [
 export const stationsTimeline: TimelineStation[] = [
   {
     id: 'st1',
-    date: '02/08/2026',
-    rawDate: '2026-08-02',
-    location: 'Chùa Phước Lập',
+    date: '13/08/2026',
+    rawDate: '2026-08-13',
+    location: 'Trường THCS Đông Hòa 2',
     province: 'Kiên Giang',
-    details: 'Khám tầm soát mắt cộng đồng, đo khúc xạ và cấp phát thuốc miễn phí cho bà con tại Chùa Phước Lập.',
+    details: 'Chuyến xe Vision Bus tổ chức khám tầm soát bệnh lý mắt, đo khúc xạ và cấp phát thuốc miễn phí cho các em học sinh và người dân.',
     slotsAvailable: 150
   },
   {
     id: 'st2',
-    date: '03/08/2026',
-    rawDate: '2026-08-03',
-    location: 'Rạch Giá',
+    date: '14/08/2026',
+    rawDate: '2026-08-14',
+    location: 'TYT xã Vĩnh Điều',
     province: 'Kiên Giang',
-    details: 'Chuyến xe Vision Bus cập bến Rạch Giá: Thăm khám nhãn khoa toàn diện và tầm soát bệnh lý mắt.',
+    details: 'Chương trình thăm khám nhãn khoa toàn diện, tư vấn chăm sóc mắt và cấp thuốc miễn phí tại Trạm Y Tế xã Vĩnh Điều.',
     slotsAvailable: 180
   },
   {
     id: 'st3',
-    date: '04/08/2026',
-    rawDate: '2026-08-04',
-    location: 'Rạch Giá',
+    date: '14/08/2026',
+    rawDate: '2026-08-14',
+    location: 'Thanh niên - Trường TH & THCS Hòa Chánh 3',
     province: 'Kiên Giang',
-    details: 'Chương trình khám mắt lưu động, tư vấn sức khỏe thị lực và hỗ trợ đăng ký mổ đục thủy tinh thể tại Rạch Giá.',
+    details: 'Phối hợp lực lượng Thanh niên tổ chức tầm soát tật khúc xạ học đường và kiểm tra sức khỏe thị lực tại Trường TH & THCS Hòa Chánh 3.',
     slotsAvailable: 200
   },
   {
     id: 'st4',
-    date: '05/08/2026',
-    rawDate: '2026-08-05',
-    location: 'Rạch Giá',
+    date: '15/08/2026',
+    rawDate: '2026-08-15',
+    location: 'Xã Đoàn Đông Thái (TYT Nam Thái A)',
     province: 'Kiên Giang',
-    details: 'Tầm soát tật khúc xạ học đường và kiểm tra đáy mắt cho người cao tuổi tại Rạch Giá.',
+    details: 'Phối hợp cùng Xã Đoàn Đông Thái tổ chức khám tầm soát mắt và phát thuốc miễn phí cho bà con tại Trạm Y Tế Nam Thái A.',
+    slotsAvailable: 200
+  },
+  {
+    id: 'st5',
+    date: '15/08/2026',
+    rawDate: '2026-08-15',
+    location: 'Khu phố Rạch Sỏi 1',
+    province: 'Kiên Giang',
+    details: 'Chương trình khám mắt lưu động, tư vấn sức khỏe thị lực và hỗ trợ đăng ký mổ đục thủy tinh thể tại Khu phố Rạch Sỏi 1.',
+    slotsAvailable: 180
+  },
+  {
+    id: 'st6',
+    date: '16/08/2026',
+    rawDate: '2026-08-16',
+    location: 'Xã Đoàn Đông Thái (TYT Nam Thái A)',
+    province: 'Kiên Giang',
+    details: 'Chuyến xe Vision Bus tiếp tục ngày khám thứ 2 phối hợp cùng Xã Đoàn Đông Thái tại Trạm Y Tế Nam Thái A.',
     slotsAvailable: 200
   }
 ];

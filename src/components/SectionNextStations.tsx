@@ -85,7 +85,7 @@ function SectionNextStations({ onOpenBookingWithStation: _onOpenBookingWithStati
             Hãy tra cứu thời gian chiếc xe Vision Bus cập bến địa phương bạn để sắp xếp đăng ký nhận vé khám kịp thời.
           </p>
         </div>
-        
+
         {/* Timeline structure */}
         <div className="relative border-l border-slate-200/80 ml-4 sm:ml-6 space-y-10 pl-6 sm:pl-10 text-left">
           {stationsWithStatus.map((station) => {
