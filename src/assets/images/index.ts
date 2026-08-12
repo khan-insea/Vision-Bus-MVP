@@ -21,10 +21,3 @@ export { default as caringValue } from './sections/caring_value.svg';
 export { default as logoSaigonEyeHospital } from './logos/logo-msg.svg';
 
 export { default as journeyBusMobile } from './gallery/bus_1.webp';
-
-import bannerImage from './banner.png';
-
-
-export {
-  bannerImage
-};

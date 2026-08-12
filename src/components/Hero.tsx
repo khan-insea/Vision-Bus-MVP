@@ -6,7 +6,7 @@
 import { useCallback, useMemo, memo } from 'react';
 import { motion } from 'motion/react';
 import { MousePointerClick, Play, PhoneCall, Bus, Sparkles, HeartHandshake } from 'lucide-react';
-import { heroLandscape, bus, bannerImage } from '../assets/images';
+import { heroLandscape, bus } from '../assets/images';
 import { getSpecificAssetImage } from '../data';
 
 interface HeroProps {
@@ -15,7 +15,7 @@ interface HeroProps {
 
 function Hero({ onOpenBooking }: HeroProps) {
   const heroImage = useMemo(() => {
-    return bannerImage || getSpecificAssetImage(['hero', 'bus.jpg', 'bus'], bus || heroLandscape);
+    return getSpecificAssetImage(['hero', 'bus.jpg', 'bus'], bus || heroLandscape);
   }, []);
 
   const scrollToSection = useCallback((id: string) => {
