@@ -1,28 +1,28 @@
-import fs from 'fs';
-import path from 'path';
+// import fs from 'fs';
+// import path from 'path';
 
-async function generateOGImage() {
-  const sourceBannerPath = path.join(process.cwd(), 'src/assets/images/banner.png');
-  const publicDir = path.join(process.cwd(), 'public');
+// async function generateOGImage() {
+//   const sourceBannerPath = path.join(process.cwd(), 'src/assets/images/banner.png');
+//   const publicDir = path.join(process.cwd(), 'public');
 
-  if (!fs.existsSync(publicDir)) {
-    fs.mkdirSync(publicDir, { recursive: true });
-  }
+//   if (!fs.existsSync(publicDir)) {
+//     fs.mkdirSync(publicDir, { recursive: true });
+//   }
 
-  const targetBannerPath = path.join(publicDir, 'banner.png');
-  const targetOgJpgPath = path.join(publicDir, 'og-image.jpg');
+//   const targetBannerPath = path.join(publicDir, 'banner.png');
+//   const targetOgJpgPath = path.join(publicDir, 'og-image.jpg');
 
-  if (fs.existsSync(sourceBannerPath)) {
-    fs.copyFileSync(sourceBannerPath, targetBannerPath);
-    fs.copyFileSync(sourceBannerPath, targetOgJpgPath);
-    console.log(`Copied OG image from ${sourceBannerPath} to ${targetBannerPath} and ${targetOgJpgPath}`);
-  } else {
-    console.warn(`Source OG image not found at ${sourceBannerPath}`);
-  }
-}
+//   if (fs.existsSync(sourceBannerPath)) {
+//     fs.copyFileSync(sourceBannerPath, targetBannerPath);
+//     fs.copyFileSync(sourceBannerPath, targetOgJpgPath);
+//     console.log(`Copied OG image from ${sourceBannerPath} to ${targetBannerPath} and ${targetOgJpgPath}`);
+//   } else {
+//     console.warn(`Source OG image not found at ${sourceBannerPath}`);
+//   }
+// }
 
-generateOGImage().catch((err) => {
-  console.error('Error handling OG image:', err);
-  process.exit(1);
-});
+// generateOGImage().catch((err) => {
+//   console.error('Error handling OG image:', err);
+//   process.exit(1);
+// });
 
