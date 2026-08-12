@@ -60,10 +60,6 @@ function SectionContact() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 lg:mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-white/10 backdrop-blur-sm text-white rounded-full text-xs font-bold tracking-wide uppercase mb-3">
-            <MessageSquare className="w-3.5 h-3.5" />
-            <span>10 . Liên Hệ & Đồng Hành</span>
-          </div>
           <h4 className="text-xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-white tracking-tight leading-tight whitespace-nowrap">
             Kết Nối Cùng Vision Bus
           </h4>

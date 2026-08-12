@@ -78,10 +78,6 @@ function SectionNextStations({ onOpenBookingWithStation: _onOpenBookingWithStati
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14 lg:mb-20">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold tracking-wide uppercase mb-3">
-            <Calendar className="w-3.5 h-3.5" />
-            <span>09 . Lịch Trình Hoạt Động</span>
-          </div>
           <h4 className="text-xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-dark tracking-tight leading-tight whitespace-nowrap">
             Trạm Dừng Kế Tiếp
           </h4>
@@ -89,7 +85,7 @@ function SectionNextStations({ onOpenBookingWithStation: _onOpenBookingWithStati
             Hãy tra cứu thời gian chiếc xe Vision Bus cập bến địa phương bạn để sắp xếp đăng ký nhận vé khám kịp thời.
           </p>
         </div>
-
+        
         {/* Timeline structure */}
         <div className="relative border-l border-slate-200/80 ml-4 sm:ml-6 space-y-10 pl-6 sm:pl-10 text-left">
           {stationsWithStatus.map((station) => {

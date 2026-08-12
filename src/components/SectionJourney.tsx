@@ -26,10 +26,6 @@ function SectionJourney() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12 lg:mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold tracking-wide uppercase mb-3">
-            <HeartHandshake className="w-3.5 h-3.5" />
-            <span>02 . Hành Trình Mang Ánh Sáng</span>
-          </div>
           <h4 className="text-xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-dark tracking-tight leading-tight whitespace-nowrap">
             Hành Trình Mang Ánh Sáng
           </h4>

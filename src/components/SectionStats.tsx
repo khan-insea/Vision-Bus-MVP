@@ -18,10 +18,6 @@ function SectionStats() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
-          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-primary/10 text-primary rounded-full text-xs sm:text-sm font-bold mb-3 sm:mb-4">
-            <Award className="w-4 h-4 sm:w-8 sm:h-8 shrink-0" />
-            <span>04 . Trạm Dừng Vision Bus</span>
-          </div>
           <h4 className="text-xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-dark tracking-tight whitespace-nowrap">
             Trạm Dừng Vision Bus
           </h4>

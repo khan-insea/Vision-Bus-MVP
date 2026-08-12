@@ -89,10 +89,6 @@ function SectionGallery() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold tracking-wide uppercase mb-3">
-            <Image className="w-3.5 h-3.5" />
-            <span>07 . Thư Viện Hình Ảnh</span>
-          </div>
           <h4 className="text-xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-dark tracking-tight leading-tight whitespace-nowrap">
             Khoảnh Khắc Của Niềm Tin
           </h4>
@@ -145,11 +141,11 @@ function SectionGallery() {
                     setCurrentImageIndex(0);
                     setSlideDirection(0);
                   }}
-                  className="relative bg-white rounded-3xl overflow-hidden border border-slate-100 p-2.5 shadow-sm hover:shadow-xl transition-all duration-300 group cursor-pointer w-full"
+                  className="relative rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer w-full"
                 >
-                  <div className="relative rounded-2xl overflow-hidden bg-slate-100 aspect-[4/3]">
+                  <div className="relative overflow-hidden aspect-[4/3]">
                     {!isLoaded && (
-                      <div className="absolute inset-0 bg-slate-200 animate-pulse flex items-center justify-center">
+                      <div className="absolute inset-0 bg-slate-100/50 animate-pulse flex items-center justify-center">
                         <Grid className="w-8 h-8 text-slate-300 animate-spin" />
                       </div>
                     )}
@@ -198,12 +194,12 @@ function SectionGallery() {
       {/* Lightbox Slider */}
       <AnimatePresence>
         {selectedItemIndex !== null && activeItem && (
-          <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-dark/95 backdrop-blur-md p-4 sm:p-6 overflow-y-auto">
+          <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-white/95 backdrop-blur-xl p-4 sm:p-6 overflow-y-auto">
             
             <button
               id="close-lightbox-btn"
               onClick={() => setSelectedItemIndex(null)}
-              className="absolute top-6 right-6 z-55 p-2.5 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-all cursor-pointer"
+              className="absolute top-6 right-6 z-55 p-2.5 text-slate-500 hover:text-dark bg-slate-100 hover:bg-slate-200 rounded-full transition-all cursor-pointer shadow-sm"
               aria-label="Đóng"
             >
               <X className="w-6 h-6" />
@@ -212,7 +208,7 @@ function SectionGallery() {
             <button
               id="prev-lightbox-btn"
               onClick={handlePrev}
-              className="absolute left-4 sm:left-8 z-55 p-3.5 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-all cursor-pointer hidden md:flex"
+              className="absolute left-4 sm:left-8 z-55 p-3.5 text-slate-600 hover:text-dark bg-slate-100 hover:bg-slate-200 rounded-full transition-all cursor-pointer hidden md:flex shadow-sm"
               aria-label="Trước"
             >
               <ChevronLeft className="w-6 h-6" />
@@ -220,19 +216,19 @@ function SectionGallery() {
 
             <div className="relative max-w-4xl w-full flex flex-col items-center justify-center">
               
-              <div className="text-center mb-6 text-white max-w-xl px-4">
-                <span className="text-[10px] uppercase tracking-widest text-accent font-black bg-accent/10 px-2.5 py-1 rounded-full">
+              <div className="text-center mb-6 text-dark max-w-xl px-4">
+                <span className="text-[10px] uppercase tracking-widest text-primary font-black bg-primary/10 px-2.5 py-1 rounded-full">
                   {activeItem.category}
                 </span>
-                <h4 className="font-extrabold text-xl sm:text-2xl font-heading mt-3">
+                <h4 className="font-extrabold text-xl sm:text-2xl font-heading mt-3 text-dark">
                   {activeItem.title}
                 </h4>
-                <p className="text-sm text-slate-300 mt-1.5 leading-relaxed">
+                <p className="text-sm text-slate-600 mt-1.5 leading-relaxed">
                   {activeItem.description}
                 </p>
               </div>
 
-              <div className="relative w-full h-[40vh] sm:h-[50vh] md:h-[55vh] flex items-center justify-center overflow-hidden bg-black/40 rounded-2xl border border-white/5">
+              <div className="relative w-full h-[40vh] sm:h-[50vh] md:h-[55vh] flex items-center justify-center overflow-hidden">
                 <AnimatePresence initial={false}>
                   <motion.img
                     key={currentImageIndex}
@@ -243,21 +239,21 @@ function SectionGallery() {
                     animate="center"
                     exit="exit"
                     transition={{ opacity: { duration: 0.25 } }}
-                    className="absolute max-h-full max-w-full object-contain rounded-xl shadow-xl select-none"
+                    className="absolute max-h-full max-w-full object-contain rounded-2xl shadow-2xl select-none"
                     referrerPolicy="no-referrer"
                   />
                 </AnimatePresence>
 
                 <button
                   onClick={handlePrev}
-                  className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-black/40 text-white rounded-full md:hidden cursor-pointer"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 p-2 bg-slate-900/10 hover:bg-slate-900/20 text-dark rounded-full md:hidden cursor-pointer backdrop-blur-sm"
                 >
                   <ChevronLeft className="w-5 h-5" />
                 </button>
 
                 <button
                   onClick={handleNext}
-                  className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-black/40 text-white rounded-full md:hidden cursor-pointer"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 p-2 bg-slate-900/10 hover:bg-slate-900/20 text-dark rounded-full md:hidden cursor-pointer backdrop-blur-sm"
                 >
                   <ChevronRight className="w-5 h-5" />
                 </button>
@@ -274,8 +270,8 @@ function SectionGallery() {
                       }}
                       className={`relative shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border-2 transition-all duration-300 cursor-pointer snap-center ${
                         idx === currentImageIndex
-                          ? 'border-primary scale-105 shadow-lg shadow-primary/25 ring-2 ring-primary/30 opacity-100'
-                          : 'border-white/10 hover:border-white/30 opacity-40 hover:opacity-100'
+                          ? 'border-primary scale-105 shadow-lg shadow-primary/20 ring-2 ring-primary/30 opacity-100'
+                          : 'border-slate-200 hover:border-slate-400 opacity-60 hover:opacity-100'
                       }`}
                     >
                       <img
@@ -293,7 +289,7 @@ function SectionGallery() {
                 </div>
               </div>
 
-              <div className="text-xs text-white/50 mt-4 font-mono bg-white/5 px-3 py-1 rounded-full">
+              <div className="text-xs text-slate-500 mt-4 font-mono bg-slate-100 px-3 py-1 rounded-full">
                 Hình ảnh {currentImageIndex + 1} / {currentImages.length}
               </div>
 
@@ -302,7 +298,7 @@ function SectionGallery() {
             <button
               id="next-lightbox-btn"
               onClick={handleNext}
-              className="absolute right-4 sm:right-8 z-55 p-3.5 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-all cursor-pointer hidden md:flex"
+              className="absolute right-4 sm:right-8 z-55 p-3.5 text-slate-600 hover:text-dark bg-slate-100 hover:bg-slate-200 rounded-full transition-all cursor-pointer hidden md:flex shadow-sm"
               aria-label="Sau"
             >
               <ChevronRight className="w-6 h-6" />

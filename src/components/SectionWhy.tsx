@@ -25,10 +25,6 @@ function SectionWhy() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-6 lg:mb-16">
-          <div className="inline-flex items-center gap-1.5 h-[30px] lg:h-auto px-4 sm:px-4 lg:px-3 lg:py-1 bg-primary/10 text-primary rounded-full text-[13px] sm:text-sm lg:text-xs font-bold tracking-wide uppercase mb-3 whitespace-nowrap">
-            <HelpCircle className="w-3.5 h-3.5" />
-            <span>03 . Vì Sao Vision Bus Ra Đời?</span>
-          </div>
           <h4 className="text-xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-dark tracking-tight leading-tight mb-3 whitespace-nowrap">
             Vì Sao Vision Bus Ra Đời?
           </h4>

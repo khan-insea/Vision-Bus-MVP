@@ -21,10 +21,6 @@ function SectionDoctors() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14 lg:mb-20">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold tracking-wide uppercase mb-3">
-            <Users className="w-3.5 h-3.5" />
-            <span>06 . Đội Ngũ Chuyên Gia</span>
-          </div>
           <h4 className="text-xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-dark tracking-tight leading-tight whitespace-nowrap">
             Những Người Giữ Ánh Sáng
           </h4>
@@ -79,17 +75,6 @@ function SectionDoctors() {
                     {doc.bio}
                   </p>
                 </div>
-              </div>
-
-              {/* Action */}
-              <div className="pt-6 mt-4 border-t border-slate-100 text-left">
-                <button
-                  id={`view-doc-profile-${doc.id}`}
-                  onClick={() => setSelectedDoctor(doc)}
-                  className="w-full py-2.5 bg-primary/10 group-hover:bg-primary text-primary group-hover:text-white rounded-xl text-xs font-bold tracking-wide transition-all duration-200 text-center cursor-pointer"
-                >
-                  Xem hồ sơ chuyên môn
-                </button>
               </div>
             </motion.div>
           ))}

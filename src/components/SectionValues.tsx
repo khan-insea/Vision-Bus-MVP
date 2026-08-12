@@ -33,17 +33,6 @@ function SectionValues() {
 
       {/* Layer 3: Content Layer (Top - Foreground) */}
       <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.3 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 bg-emerald-500/10 border border-emerald-500/20 text-emerald-800 rounded-full text-xs sm:text-sm font-bold tracking-wider uppercase mb-6 shadow-sm backdrop-blur-sm"
-        >
-          <Bookmark className="w-4 h-4 text-emerald-600" />
-          <span>05 . Sự Khác Biệt Bền Vững</span>
-        </motion.div>
 
         {/* Heading #0F172A */}
         <motion.h4

@@ -39,10 +39,6 @@ function SectionPress() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-8 sm:mb-12 lg:mb-16 gap-4">
           <div className="text-left max-w-2xl">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold tracking-wide uppercase mb-3">
-              <Newspaper className="w-3.5 h-3.5" />
-              <span>08 . Truyền Thông & Báo Chí</span>
-            </div>
             <h4 className="text-lg xs:text-xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-dark tracking-tight leading-tight whitespace-nowrap">
               Báo Chí Nói Gì Về Chúng Tôi?
             </h4>
@@ -50,6 +46,7 @@ function SectionPress() {
               Sự đồng hành, ghi nhận khách quan từ các đơn vị thông tin chính thống tiếp thêm sức mạnh cho hành trình gieo mầm hy vọng.
             </p>
           </div>
+
 
           <div className="flex items-center gap-3 self-start md:self-end">
             <button
