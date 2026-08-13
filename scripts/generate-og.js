@@ -10,6 +10,12 @@ async function generateOGImage() {
   }
 
   const targetBannerPath = path.join(publicDir, 'banner.png');
+  const targetOgJpgPath = path.join(publicDir, 'og-image.jpg');
+
+  // Clean up legacy og-image.jpg if it exists
+  if (fs.existsSync(targetOgJpgPath)) {
+    fs.unlinkSync(targetOgJpgPath);
+  }
 
   if (fs.existsSync(sourceBannerPath)) {
     fs.copyFileSync(sourceBannerPath, targetBannerPath);
@@ -23,3 +29,5 @@ generateOGImage().catch((err) => {
   console.error('Error handling OG image:', err);
   process.exit(1);
 });
+
+
