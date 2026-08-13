@@ -169,12 +169,16 @@ function SectionGallery() {
                       <span className="text-[10px] uppercase font-extrabold text-accent tracking-widest mb-1">
                         {item.category}
                       </span>
-                      <h4 className="font-bold text-sm text-white font-heading leading-tight flex items-center gap-1.5">
-                        <Eye className="w-4 h-4 text-primary-light" /> {item.title}
-                      </h4>
-                      <p className="text-xs text-slate-200 leading-snug mt-1 line-clamp-2">
-                        {item.description}
-                      </p>
+                      {item.title && (
+                        <h4 className="font-bold text-sm text-white font-heading leading-tight flex items-center gap-1.5">
+                          <Eye className="w-4 h-4 text-primary-light" /> {item.title}
+                        </h4>
+                      )}
+                      {item.description && (
+                        <p className="text-xs text-slate-200 leading-snug mt-1 line-clamp-2">
+                          {item.description}
+                        </p>
+                      )}
                     </div>
                   </div>
                 </motion.div>
@@ -220,12 +224,16 @@ function SectionGallery() {
                 <span className="text-[10px] uppercase tracking-widest text-primary font-black bg-primary/10 px-2.5 py-1 rounded-full">
                   {activeItem.category}
                 </span>
-                <h4 className="font-extrabold text-xl sm:text-2xl font-heading mt-3 text-dark">
-                  {activeItem.title}
-                </h4>
-                <p className="text-sm text-slate-600 mt-1.5 leading-relaxed">
-                  {activeItem.description}
-                </p>
+                {activeItem.title && (
+                  <h4 className="font-extrabold text-xl sm:text-2xl font-heading mt-3 text-dark">
+                    {activeItem.title}
+                  </h4>
+                )}
+                {activeItem.description && (
+                  <p className="text-sm text-slate-600 mt-1.5 leading-relaxed">
+                    {activeItem.description}
+                  </p>
+                )}
               </div>
 
               <div className="relative w-full h-[40vh] sm:h-[50vh] md:h-[55vh] flex items-center justify-center overflow-hidden">
@@ -239,6 +247,7 @@ function SectionGallery() {
                     animate="center"
                     exit="exit"
                     transition={{ opacity: { duration: 0.25 } }}
+                    decoding="async"
                     className="absolute max-h-full max-w-full object-contain rounded-2xl shadow-2xl select-none"
                     referrerPolicy="no-referrer"
                   />

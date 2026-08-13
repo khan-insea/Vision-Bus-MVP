@@ -39,8 +39,8 @@ export interface TimelineStation {
 export interface GalleryItem {
   id: string;
   category: 'khám và tầm soát' | 'hoạt động bác sĩ' | 'người dân tham gia' | 'địa phương' | 'hậu trường' | 'khoảnh khắc đáng nhớ';
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   image: string;
   images?: string[];
 }

@@ -4,9 +4,10 @@
  */
 
 import { useState, useEffect, useCallback, memo } from 'react';
-import { ChevronUp, Facebook, Youtube, ExternalLink } from 'lucide-react';
+import { ChevronUp, Facebook, Globe, Mail, Phone, MapPin, Clock } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { LogoIcon } from './Logo';
+import { hospitalInfo } from '../data';
 
 function Footer() {
   const [isVisible, setIsVisible] = useState(false);
@@ -34,14 +35,14 @@ function Footer() {
   }, []);
 
   return (
-    <footer id="app-footer" className="bg-dark text-slate-300 py-16 border-t border-white/5 relative z-20">
+    <footer id="app-footer" className="bg-dark text-slate-300 pt-16 pb-12 border-t border-white/10 relative z-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Main grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-12 text-left">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-12 mb-12 text-left">
           
-          {/* Brand Info (5 cols) */}
-          <div className="md:col-span-5 space-y-4">
+          {/* Brand Info (4 cols) */}
+          <div className="md:col-span-4 space-y-4">
             <a
               id="footer-brand"
               href="#home"
@@ -49,102 +50,158 @@ function Footer() {
                 e.preventDefault();
                 scrollToTop();
               }}
-              className="inline-block bg-white px-4 py-2.5 rounded-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer shadow-sm shadow-white/5 border border-slate-100/10"
+              className="inline-block bg-white px-4 py-2.5 rounded-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer shadow-sm border border-slate-100"
             >
               <LogoIcon size="md" className="h-9 sm:h-10 w-auto" />
             </a>
             
             <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm">
-              Chương trình sức khỏe cộng đồng lưu động của <strong className="text-white font-semibold">Bệnh viện Mắt Sài Gòn Kiên Giang</strong>. Đồng hành thắp sáng đôi mắt Việt, mang niềm tin nhãn khoa chuẩn 5 sao đến mọi miền quê hương.
+              Chương trình y tế cộng đồng lưu động thuộc <strong className="text-white font-semibold">Bệnh viện Mắt Sài Gòn Kiên Giang</strong>. Mang dịch vụ nhãn khoa chất lượng cao đến tận các vùng sâu, xã đảo Kiên Giang.
             </p>
+
+            <div className="pt-2">
+              <p className="text-xs text-slate-400 font-medium mb-3 uppercase tracking-wider">Kênh truyền thông chính thức</p>
+              <div className="flex items-center gap-2.5">
+                <a
+                  id="footer-social-fb"
+                  href={hospitalInfo.socials.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-xl bg-white/5 hover:bg-primary text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm"
+                  aria-label="Facebook Bệnh viện Mắt Sài Gòn Kiên Giang"
+                  title="Facebook"
+                >
+                  <Facebook className="w-4 h-4" />
+                </a>
+
+                <a
+                  id="footer-social-tiktok"
+                  href={hospitalInfo.socials.tiktok}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-xl bg-white/5 hover:bg-primary text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm"
+                  aria-label="TikTok Bệnh viện Mắt Sài Gòn Kiên Giang"
+                  title="TikTok"
+                >
+                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .56.04.82.12V9.4a6.33 6.33 0 0 0-1-.08A6.34 6.34 0 0 0 3 15.66a6.34 6.34 0 0 0 10.86 4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.04z"/>
+                  </svg>
+                </a>
+
+                <a
+                  id="footer-social-web"
+                  href={hospitalInfo.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-xl bg-white/5 hover:bg-primary text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm"
+                  aria-label="Website Bệnh viện Mắt Sài Gòn Kiên Giang"
+                  title="Website"
+                >
+                  <Globe className="w-4 h-4" />
+                </a>
+
+                <a
+                  id="footer-social-mail"
+                  href={`mailto:${hospitalInfo.email}`}
+                  className="w-9 h-9 rounded-xl bg-white/5 hover:bg-primary text-slate-300 hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm"
+                  aria-label="Email Bệnh viện Mắt Sài Gòn Kiên Giang"
+                  title="Gửi Email"
+                >
+                  <Mail className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
           </div>
 
           {/* Quick Links (3 cols) */}
           <div className="md:col-span-3 space-y-4">
-            <h5 className="text-white font-bold text-xs uppercase tracking-widest">Đường dẫn nhanh</h5>
-            <ul className="space-y-2 text-xs">
+            <h5 className="text-white font-bold text-xs uppercase tracking-widest border-b border-white/10 pb-2">Đường dẫn nhanh</h5>
+            <ul className="space-y-2.5 text-xs text-slate-300">
               <li>
-                <a href="#journey" className="hover:text-primary hover:underline transition-colors block">Hành trình mang ánh sáng</a>
+                <a href="#journey" className="hover:text-primary transition-colors flex items-center gap-1.5">
+                  <span className="text-primary">•</span> Hành trình mang ánh sáng
+                </a>
               </li>
               <li>
-                <a href="#why" className="hover:text-primary hover:underline transition-colors block">Sứ mệnh ra đời</a>
+                <a href="#why" className="hover:text-primary transition-colors flex items-center gap-1.5">
+                  <span className="text-primary">•</span> Sứ mệnh ra đời
+                </a>
               </li>
               <li>
-                <a href="#stats" className="hover:text-primary hover:underline transition-colors block">Thành quả đạt được</a>
+                <a href="#stats" className="hover:text-primary transition-colors flex items-center gap-1.5">
+                  <span className="text-primary">•</span> Thành quả đạt được
+                </a>
               </li>
               <li>
-                <a href="#doctors" className="hover:text-primary hover:underline transition-colors block">Đội ngũ chuyên gia bác sĩ</a>
+                <a href="#doctors" className="hover:text-primary transition-colors flex items-center gap-1.5">
+                  <span className="text-primary">•</span> Đội ngũ y bác sĩ
+                </a>
+              </li>
+              <li>
+                <a href="#gallery" className="hover:text-primary transition-colors flex items-center gap-1.5">
+                  <span className="text-primary">•</span> Thư viện hình ảnh
+                </a>
+              </li>
+              <li>
+                <a href="#schedule" className="hover:text-primary transition-colors flex items-center gap-1.5">
+                  <span className="text-primary">•</span> Lịch trình Vision Bus
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Quick Links Part 2 (4 cols) */}
-          <div className="md:col-span-4 space-y-4">
-            <h5 className="text-white font-bold text-xs uppercase tracking-widest">Đồng hành & Chia sẻ</h5>
-            <p className="text-slate-400 text-xs leading-relaxed max-w-sm">
-              Chia sẻ câu chuyện hoặc đăng ký tham gia đóng góp cho quỹ hỗ trợ mổ mắt nhân đạo của chúng tôi.
-            </p>
-            {/* Social shares handles */}
-            <div className="flex items-center gap-3">
-              <a
-                id="footer-social-fb"
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/5 hover:bg-primary/20 text-slate-300 hover:text-white flex items-center justify-center transition-all cursor-pointer"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-4 h-4" />
-              </a>
-              <a
-                id="footer-social-yt"
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/5 hover:bg-primary/20 text-slate-300 hover:text-white flex items-center justify-center transition-all cursor-pointer"
-                aria-label="YouTube"
-              >
-                <Youtube className="w-4 h-4" />
-              </a>
-              <a
-                id="footer-social-tiktok"
-                href="https://www.tiktok.com/@matsaigonkiengiang"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/5 hover:bg-primary/20 text-slate-300 hover:text-white flex items-center justify-center transition-all cursor-pointer font-bold text-xs"
-                aria-label="TikTok"
-              >
-                <span className="font-sans">𝄡</span>
-              </a>
-              <a
-                id="footer-social-web"
-                href="https://matsaigonkiengiang.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-white/5 hover:bg-primary/20 text-slate-300 hover:text-white flex items-center justify-center transition-all cursor-pointer"
-                aria-label="Website"
-              >
-                <ExternalLink className="w-4 h-4" />
-              </a>
+          {/* Contact Info (5 cols) */}
+          <div className="md:col-span-5 space-y-4">
+            <h5 className="text-white font-bold text-xs uppercase tracking-widest border-b border-white/10 pb-2">Bệnh viện Mắt Sài Gòn Kiên Giang</h5>
+            
+            <div className="space-y-3 text-xs text-slate-300">
+              <div className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                <span className="leading-relaxed">{hospitalInfo.address}</span>
+              </div>
+
+              <div className="flex items-center gap-2.5">
+                <Phone className="w-4 h-4 text-primary shrink-0" />
+                <span>Tổng đài: <strong className="text-white font-medium">{hospitalInfo.phone}</strong> | Hotline: <strong className="text-white font-medium">{hospitalInfo.hotline}</strong></span>
+              </div>
+
+              <div className="flex items-center gap-2.5">
+                <Mail className="w-4 h-4 text-primary shrink-0" />
+                <a href={`mailto:${hospitalInfo.email}`} className="text-slate-300 hover:text-white transition-colors break-all">
+                  {hospitalInfo.email}
+                </a>
+              </div>
+
+              <div className="flex items-center gap-2.5">
+                <Globe className="w-4 h-4 text-primary shrink-0" />
+                <a href={hospitalInfo.website} target="_blank" rel="noopener noreferrer" className="text-slate-300 hover:text-white transition-colors">
+                  matsaigonkiengiang.com
+                </a>
+              </div>
+
+              <div className="flex items-center gap-2.5 pt-1 text-slate-400">
+                <Clock className="w-4 h-4 text-primary shrink-0" />
+                <span>Giờ làm việc: {hospitalInfo.workingHours}</span>
+              </div>
             </div>
           </div>
 
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div>
-            &copy; {new Date().getFullYear()} Vision Bus. All rights reserved.
+            &copy; {new Date().getFullYear()} Vision Bus - Bệnh viện Mắt Sài Gòn Kiên Giang. Tất cả quyền được bảo lưu.
           </div>
-          <div className="flex items-center gap-1">
-            <span>Thiết kế tận tâm bởi Bệnh viện Mắt Sài Gòn Kiên Giang</span>
+          <div className="flex items-center gap-1.5">
+            <span>Đồng hành thắp sáng đôi mắt Việt</span>
             <span className="text-red-500">❤️</span>
           </div>
         </div>
 
       </div>
 
-      {/* Float Back To Top Button (AnimatePresence) */}
+      {/* Float Back To Top Button */}
       <AnimatePresence>
         {isVisible && (
           <motion.button

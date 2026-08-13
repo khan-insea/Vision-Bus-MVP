@@ -80,7 +80,7 @@ function Hero({ onOpenBooking }: HeroProps) {
                 transition={{ duration: 0.3 }}
                 className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed max-w-xl font-normal"
               >
-                Hành trình đưa dịch vụ nhãn khoa chất lượng cao trực thuộc Bệnh viện Mắt Sài Gòn Kiên Giang đến tận từng huyện xã, hải đảo vùng xa.
+                Hành trình đưa dịch vụ nhãn khoa chất lượng cao trực thuộc Bệnh viện Mắt Sài Gòn Kiên Giang đến tận từng huyện xã vùng xa.
               </motion.p>
             </div>
 
@@ -122,11 +122,11 @@ function Hero({ onOpenBooking }: HeroProps) {
             {/* Trust badge stats row */}
             <div className="pt-3 sm:pt-4 flex flex-wrap items-center gap-4 sm:gap-8 border-t border-slate-200/60 text-xs sm:text-base font-semibold text-slate-600">
               <div className="flex items-center gap-2 sm:gap-2.5">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-extrabold text-xs sm:text-base">15+</div>
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-extrabold text-xs sm:text-base">50+</div>
                 <span>Điểm dừng chân</span>
               </div>
               <div className="flex items-center gap-2 sm:gap-2.5">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-extrabold text-xs sm:text-base">12k+</div>
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center font-extrabold text-xs sm:text-base">68k+</div>
                 <span>Lượt khám miễn phí</span>
               </div>
             </div>

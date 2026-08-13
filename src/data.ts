@@ -169,48 +169,36 @@ export const galleryItems: GalleryItem[] = [
   {
     id: 'g1',
     category: 'khám và tầm soát',
-    title: 'Đo khúc xạ công nghệ cao',
-    description: 'Bác sĩ đo mắt cho em nhỏ học sinh tiểu học tại huyện đảo Kiên Hải.',
     image: getThematicImages('khám và tầm soát', galleryEyeTest)[0] || galleryEyeTest,
     images: getThematicImages('khám và tầm soát', galleryEyeTest)
   },
   {
     id: 'g2',
     category: 'hoạt động bác sĩ',
-    title: 'Khám đáy mắt lưu động',
-    description: 'Bác sĩ chuyên khoa sử dụng thiết bị cầm tay chuyên dụng soi võng mạc cho cụ già.',
     image: getThematicImages('hoạt động bác sĩ', galleryEyeTest)[0] || galleryEyeTest,
     images: getThematicImages('hoạt động bác sĩ', galleryEyeTest)
   },
   {
     id: 'g3',
     category: 'người dân tham gia',
-    title: 'Nụ cười tìm lại ánh sáng',
-    description: 'Cụ bà 75 tuổi tại Gò Quao cười rạng rỡ khi mắt sáng khỏe trở lại sau khi tháo băng.',
     image: getThematicImages('người dân tham gia', galleryHappyPatient)[0] || galleryHappyPatient,
     images: getThematicImages('người dân tham gia', galleryHappyPatient)
   },
   {
     id: 'g4',
     category: 'địa phương',
-    title: 'Hành trình vượt sông nước',
-    description: 'Xe Vision Bus và đoàn y tế vượt phà mang trang thiết bị tới xã vùng sâu U Minh Thượng.',
     image: getThematicImages('địa phương', galleryBus)[0] || galleryBus,
     images: getThematicImages('địa phương', galleryBus)
   },
   {
     id: 'g5',
     category: 'hậu trường',
-    title: 'Chuẩn bị từ hừng đông',
-    description: 'Các điều dưỡng sắp xếp máy móc, thuốc nhỏ mắt sẵn sàng tiếp đón bà con từ 6 giờ sáng.',
     image: getThematicImages('hậu trường', galleryEyeTest)[0] || galleryEyeTest,
     images: getThematicImages('hậu trường', galleryEyeTest)
   },
   {
     id: 'g6',
     category: 'khoảnh khắc đáng nhớ',
-    title: 'Sáng mắt - Sáng cả niềm tin',
-    description: 'Bức ảnh lưu niệm xúc động cùng tập thể bà con xã đảo Lại Sơn, huyện Kiên Hải.',
     image: getThematicImages('khoảnh khắc đáng nhớ', galleryHappyPatient)[0] || galleryHappyPatient,
     images: getThematicImages('khoảnh khắc đáng nhớ', galleryHappyPatient)
   }
@@ -307,3 +295,19 @@ export const stationsTimeline: TimelineStation[] = [
     slotsAvailable: 200
   }
 ];
+
+
+export const hospitalInfo = {
+  name: 'Bệnh viện Mắt Sài Gòn Kiên Giang',
+  address: 'Số 228 Nguyễn Trung Trực, P. Vĩnh Lạc, TP. Rạch Giá, Tỉnh Kiên Giang',
+  phone: '038 849 8969',
+  hotline: '038 849 8969',
+  email: 'contact.msgkg@matsaigon.com', // <-- Email mới
+  website: 'https://matsaigonkiengiang.com/', // <-- Website mới
+  workingHours: '7h30 - 16h00 (Thứ 2 - Thứ 6)  7h30 - 11h30 (Thứ 7)',
+  socials: {
+    facebook: 'https://www.facebook.com/matsaigonkiengiang', // <-- Link Facebook mới
+    tiktok: 'https://www.tiktok.com/@matsaigonkiengiang',   // <-- Link TikTok mới
+    website: 'https://matsaigonkiengiang.com/'
+  }
+};

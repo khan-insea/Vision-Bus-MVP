@@ -40,16 +40,13 @@ function SectionJourney() {
           className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-12 shadow-xl border border-slate-100 space-y-4 sm:space-y-6 text-left max-w-4xl mx-auto"
         >
           <div className="space-y-3 sm:space-y-4 text-slate-700 text-sm sm:text-base leading-relaxed font-medium">
-            <p className="text-base sm:text-lg font-bold text-primary">
-              Có những ánh nhìn dần mờ đi theo năm tháng.
+            <p className="text-base sm:text-lg font-bold text-slate-800">
+              Có những ánh nhìn dần mờ đi theo năm tháng. Có những hành trình đến bệnh viện còn xa hơn cả hy vọng.
             </p>
-            <p>
-              Có những hành trình đến bệnh viện còn xa hơn cả hy vọng.
-            </p>
-            <p className="font-semibold text-slate-800">
+            <p className="font-semibold text-primary text-base sm:text-lg">
               Và rồi, Vision Bus bắt đầu lăn bánh.
             </p>
-            <p>
+            <p className="text-slate-600">
               Đồng hành cùng đội ngũ y bác sĩ, chúng tôi rong ruổi mọi cung đường để rút ngắn khoảng cách y tế. Bởi chúng tôi tin, mỗi đôi mắt sáng là một cuộc đời giữ lại được trọn vẹn khoảnh khắc bên cạnh người thân yêu.
             </p>
           </div>
