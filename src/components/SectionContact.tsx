@@ -269,26 +269,6 @@ function SectionContact() {
                     </div>
 
                     <div>
-                      <label className="block text-slate-700 text-xs font-bold mb-1" htmlFor="contact-station">
-                        Địa điểm khám mong muốn <span className="text-red-500">*</span>
-                      </label>
-                      <select
-                        name="stationId"
-                        id="contact-station"
-                        required
-                        value={formData.stationId}
-                        onChange={handleChange}
-                        className="w-full px-4 py-2.5 bg-slate-50 border border-slate-100 rounded-xl text-xs font-semibold focus:outline-none focus:border-primary focus:bg-white transition-all duration-200 cursor-pointer"
-                      >
-                        {stationsTimeline.map(station => (
-                          <option key={station.id} value={station.id}>
-                            [{station.date}] {station.location}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-
-                    <div>
                       <label className="block text-slate-700 text-xs font-bold mb-1" htmlFor="contact-notes">
                         Ghi chú triệu chứng bệnh mắt
                       </label>
