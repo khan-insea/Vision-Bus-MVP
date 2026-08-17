@@ -25,12 +25,9 @@ function SectionWhy() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-6 lg:mb-16">
-          <h4 className="text-xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-dark tracking-tight leading-tight mb-3 whitespace-nowrap">
+          <h4 className="text-xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-dark tracking-tight leading-tight whitespace-nowrap">
             Vì Sao Vision Bus Ra Đời?
           </h4>
-          <p className="text-slate-600 text-[11px] xs:text-xs sm:text-sm lg:text-base leading-relaxed max-w-2xl mx-auto mb-6 whitespace-nowrap sm:whitespace-normal overflow-hidden text-ellipsis">
-            Vision Bus - Bởi mỗi đôi mắt sáng là một cuộc đời trọn vẹn hơn.
-          </p>
         </div>
 
         {/* 4 Cards Grid - 2x2 Grid on Mobile & Tablet / 4-Col Grid on Desktop */}
