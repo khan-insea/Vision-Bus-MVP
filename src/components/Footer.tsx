@@ -6,7 +6,7 @@
 import { useState, useEffect, useCallback, memo } from 'react';
 import { ChevronUp, Facebook, Globe, Mail, Phone, MapPin, Clock } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { LogoIcon } from './Logo';
+import { logoSaigonEyeHospitalWhiteFooter } from '../assets/images';
 import { hospitalInfo } from '../data';
 
 function Footer() {
@@ -50,13 +50,22 @@ function Footer() {
                 e.preventDefault();
                 scrollToTop();
               }}
-              className="inline-block bg-white px-4 py-2.5 rounded-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer shadow-sm border border-slate-100"
+              className="inline-block hover:opacity-90 active:scale-[0.98] transition-all duration-200 cursor-pointer"
             >
-              <LogoIcon size="md" className="h-9 sm:h-10 w-auto" />
+              <img
+                src={logoSaigonEyeHospitalWhiteFooter}
+                alt="Bệnh viện Mắt Sài Gòn"
+                width={180}
+                height={50}
+                loading="eager"
+                decoding="async"
+                className="h-10 sm:h-11 w-auto object-contain"
+                referrerPolicy="no-referrer"
+              />
             </a>
             
             <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm">
-              Chương trình y tế cộng đồng lưu động thuộc <strong className="text-white font-semibold">Bệnh viện Mắt Sài Gòn Kiên Giang</strong>. Mang dịch vụ nhãn khoa chất lượng cao đến tận các vùng sâu, xã đảo Kiên Giang.
+              Chương trình y tế cộng đồng lưu động thuộc <strong className="text-white font-semibold">Bệnh viện Mắt Sài Gòn Kiên Giang</strong>. Mang dịch vụ nhãn khoa chất lượng cao đến tận các vùng sâu, vùng xa Kiên Giang.
             </p>
 
             <div className="pt-2">

@@ -5,7 +5,7 @@
 
 import { useState, memo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Award, Star, CheckCircle, X, Users } from 'lucide-react';
+import { Award, CheckCircle, X } from 'lucide-react';
 import { doctorsData } from '../data';
 import { Doctor } from '../types';
 
@@ -42,7 +42,7 @@ function SectionDoctors() {
             >
               <div>
                 {/* Doctor Image Container */}
-                <div className="relative rounded-2xl overflow-hidden aspect-[4/5] mb-5 shadow-sm border border-slate-100">
+                <div className="relative rounded-2xl overflow-hidden aspect-[4/5] mb-5 shadow-sm border border-slate-100 bg-gradient-to-b from-slate-50 to-slate-100/80 flex items-end justify-center">
                   <img
                     src={doc.image}
                     alt={doc.name}
@@ -50,14 +50,9 @@ function SectionDoctors() {
                     height={500}
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-contain object-bottom group-hover:scale-105 transition-transform duration-500 pt-1"
                     referrerPolicy="no-referrer"
                   />
-                  {/* Floating badge */}
-                  <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold text-primary shadow-sm flex items-center gap-1">
-                    <Star className="w-3 h-3 fill-primary text-primary" />
-                    <span>{doc.experience}</span>
-                  </div>
                 </div>
 
                 {/* Info block */}
@@ -116,7 +111,7 @@ function SectionDoctors() {
 
               {/* Left Profile card */}
               <div className="md:w-5/12 bg-slate-50 p-6 flex flex-col items-center justify-center text-center border-r border-slate-100">
-                <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-md mb-4 shrink-0">
+                <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-white shadow-md mb-4 shrink-0 bg-slate-100 flex items-center justify-center">
                   <img
                     src={selectedDoctor.image}
                     alt={selectedDoctor.name}
@@ -124,7 +119,7 @@ function SectionDoctors() {
                     height={128}
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain object-top pt-1"
                     referrerPolicy="no-referrer"
                   />
                 </div>
@@ -133,7 +128,9 @@ function SectionDoctors() {
                 </span>
                 <h4 className="font-bold text-lg text-dark font-heading leading-tight">{selectedDoctor.name}</h4>
                 <p className="text-slate-500 text-xs font-bold mt-1">{selectedDoctor.specialty}</p>
-                <p className="text-slate-400 text-[11px] font-bold mt-1">{selectedDoctor.experience}</p>
+                {selectedDoctor.experience && (
+                  <p className="text-slate-400 text-[11px] font-bold mt-1">{selectedDoctor.experience}</p>
+                )}
               </div>
 
               {/* Right Profile Details */}

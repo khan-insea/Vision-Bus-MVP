@@ -79,22 +79,23 @@ export const coreValues: CoreValue[] = [
   }
 ];
 
-// Single centralized glob import for all images in assets
-const allImages = import.meta.glob('/src/assets/images/**/*.{png,PNG,jpg,JPG,jpeg,JPEG,svg,SVG,webp,WEBP,avif,AVIF,gif,GIF}', { eager: true, import: 'default' });
+// Centralized helper for generating instant SVG Data URIs for placeholders (0 HTTP requests)
+const generatePlaceholderDataUri = (category: string, title: string, index: number): string => {
+  const bgColors = ['#EEF2FF', '#ECFDF5', '#FFF7ED', '#FEF2F2', '#F0FDF4', '#FAF5FF'];
+  const textColors = ['#312E81', '#064E3B', '#7C2D12', '#7F1D1D', '#14532D', '#581C87'];
+  const accentColors = ['#6366F1', '#10B981', '#F97316', '#EF4444', '#22C55E', '#A855F7'];
 
-export const getSpecificAssetImage = (keywords: string[], fallbackImage: string): string => {
-  const keys = Object.keys(allImages);
-  for (const keyword of keywords) {
-    const matchedKey = keys.find(k => k.toLowerCase().includes(keyword.toLowerCase()));
-    if (matchedKey && allImages[matchedKey]) {
-      return allImages[matchedKey] as string;
-    }
-  }
-  return fallbackImage;
+  const bg = bgColors[index % bgColors.length];
+  const text = textColors[index % textColors.length];
+  const accent = accentColors[index % accentColors.length];
+
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%"><rect width="100%" height="100%" fill="${bg}"/><circle cx="400" cy="300" r="180" fill="${accent}" opacity="0.15"/><text x="50%" y="42%" dominant-baseline="middle" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="bold" font-size="28" fill="${text}">${category.toUpperCase()}</text><text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="900" font-size="32" fill="${text}">${title} - Ảnh ${index + 1}</text></svg>`;
+
+  return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
 };
 
-const getDoctorImage = (keywords: string[], defaultImage: string): string => {
-  return getSpecificAssetImage(keywords, defaultImage);
+export const getSpecificAssetImage = (keywords: string[], fallbackImage: string): string => {
+  return fallbackImage;
 };
 
 // Section 05 - Những người giữ ánh sáng (Bác sĩ)
@@ -106,7 +107,6 @@ export const doctorsData: Doctor[] = [
     specialty: 'Bệnh Viện Mắt Sài Gòn Kiên Giang',
     image: doctorPhap,
     bio: 'Gương mặt lãnh đạo chuyên môn tâm huyết, chỉ đạo trực tiếp công tác thăm khám, chẩn đoán và phẫu thuật tái tạo thị lực cho bà con.',
-    experience: '18 năm kinh nghiệm',
     credentials: [
       'Phó Giám Đốc Chuyên Môn - Bệnh Viện Mắt Sài Gòn Kiên Giang',
       'Thành viên Hội Nhãn khoa Việt Nam',
@@ -120,7 +120,6 @@ export const doctorsData: Doctor[] = [
     specialty: 'Bệnh Viện Mắt Sài Gòn Kiên Giang',
     image: doctorTrang,
     bio: 'Bác sĩ chuyên khoa tận tâm, giàu kinh nghiệm trong thăm khám, tầm soát và tư vấn điều trị các bệnh lý về mắt cho cộng đồng.',
-    experience: '12 năm kinh nghiệm',
     credentials: [
       'Thạc sĩ Bác sĩ Chuyên Khoa Mắt - Bệnh Viện Mắt Sài Gòn Kiên Giang',
       'Chứng chỉ chuyên sâu khám & tầm soát khúc xạ, bệnh lý đáy mắt',
@@ -129,80 +128,45 @@ export const doctorsData: Doctor[] = [
   }
 ];
 
-const categoryFolders: Record<string, string> = {
-  'khám và tầm soát': 'kham_va_tam_soat',
-  'hoạt động bác sĩ': 'hoat_dong_bac_si',
-  'người dân tham gia': 'nguoi_dan_tham_gia',
-  'địa phương': 'dia_phuong',
-  'hậu trường': 'hau_truong',
-  'khoảnh khắc đáng nhớ': 'khoankhac_dang_nho'
+// Dynamically import all images in src/assets/images/gallery/album/ (e.g., img_1.webp, img_2.webp, etc.)
+const albumImagesGlob = import.meta.glob<string>(
+  './assets/images/gallery/album/*.{webp,png,jpg,jpeg,svg,avif}',
+  { eager: true, import: 'default' }
+);
+
+// Sort image keys in natural numeric order (img_1.webp, img_2.webp, img_3.webp, ..., img_10.webp)
+const sortedAlbumEntries = Object.entries(albumImagesGlob).sort(([pathA], [pathB]) =>
+  pathA.localeCompare(pathB, undefined, { numeric: true, sensitivity: 'base' })
+);
+
+export const albumImagesList: string[] = sortedAlbumEntries.map(([, url]) => url);
+
+// Helper to generate thematic images for gallery items (instant Data URIs)
+export const getThematicImages = (category: string, primaryImage: string, title: string = 'Khoảnh khắc'): string[] => {
+  const placeholders = Array.from({ length: 5 }, (_, idx) => 
+    generatePlaceholderDataUri(category, title, idx)
+  );
+  return [primaryImage, ...placeholders];
 };
 
-// Helper to generate thematic images for each gallery item using allImages map
-export const getThematicImages = (category: string, primaryImage: string): string[] => {
-  const folder = categoryFolders[category] || 'kham_va_tam_soat';
-  
-  // Get matching files (case-insensitive search for folder and img_ prefix)
-  const matchingKeys = Object.keys(allImages).filter(key => {
-    const lowerKey = key.toLowerCase();
-    return lowerKey.includes(`/gallery/${folder.toLowerCase()}/img_`);
-  });
-  
-  // Sort them numerically (e.g. img_2.JPG before img_10.JPG)
-  matchingKeys.sort((a, b) => {
-    const numA = parseInt(a.match(/img_(\d+)\./i)?.[1] || '0', 10);
-    const numB = parseInt(b.match(/img_(\d+)\./i)?.[1] || '0', 10);
-    return numA - numB;
-  });
-
-  const urls = matchingKeys.map(key => allImages[key] as string);
-  
-  if (urls.length > 0) {
-    return urls;
-  }
-  
-  return [primaryImage];
-};
-
-// Section 06 - Khoảnh khắc của niềm tin (Gallery Masonry)
-export const galleryItems: GalleryItem[] = [
-  {
-    id: 'g1',
-    category: 'khám và tầm soát',
-    image: getThematicImages('khám và tầm soát', galleryEyeTest)[0] || galleryEyeTest,
-    images: getThematicImages('khám và tầm soát', galleryEyeTest)
-  },
-  {
-    id: 'g2',
-    category: 'hoạt động bác sĩ',
-    image: getThematicImages('hoạt động bác sĩ', galleryEyeTest)[0] || galleryEyeTest,
-    images: getThematicImages('hoạt động bác sĩ', galleryEyeTest)
-  },
-  {
-    id: 'g3',
-    category: 'người dân tham gia',
-    image: getThematicImages('người dân tham gia', galleryHappyPatient)[0] || galleryHappyPatient,
-    images: getThematicImages('người dân tham gia', galleryHappyPatient)
-  },
-  {
-    id: 'g4',
-    category: 'địa phương',
-    image: getThematicImages('địa phương', galleryBus)[0] || galleryBus,
-    images: getThematicImages('địa phương', galleryBus)
-  },
-  {
-    id: 'g5',
-    category: 'hậu trường',
-    image: getThematicImages('hậu trường', galleryEyeTest)[0] || galleryEyeTest,
-    images: getThematicImages('hậu trường', galleryEyeTest)
-  },
-  {
-    id: 'g6',
-    category: 'khoảnh khắc đáng nhớ',
-    image: getThematicImages('khoảnh khắc đáng nhớ', galleryHappyPatient)[0] || galleryHappyPatient,
-    images: getThematicImages('khoảnh khắc đáng nhớ', galleryHappyPatient)
-  }
-];
+// Section 06 - Khoảnh khắc của niềm tin (Gallery Carousel from album folder)
+export const galleryItems: GalleryItem[] = albumImagesList.length > 0
+  ? albumImagesList.map((imgUrl, idx) => ({
+      id: `album-img-${idx + 1}`,
+      category: 'khoảnh khắc',
+      title: `Khoảnh khắc ${idx + 1}`,
+      image: imgUrl,
+      images: [imgUrl]
+    }))
+  : [
+      {
+        id: 'g1',
+        category: 'khoảnh khắc',
+        title: 'Hành trình Vision Bus',
+        image: galleryBus,
+        images: [galleryBus]
+      }
+    ];
 
 // Section 07 - Báo chí nói gì về chúng tôi
 export const pressItems: PressItem[] = [
@@ -213,7 +177,7 @@ export const pressItems: PressItem[] = [
     title: 'Tầm soát bệnh về mắt miễn phí cho 300 người dân xã Châu Thành',
     summary: 'Ngày 18 và 19/12, Công ty Cổ phần Bệnh viện mắt Sài Gòn Kiên Giang (phường Rạch Giá, tỉnh An Giang) tổ chức khám tầm soát các bệnh về mắt miễn phí, tư vấn và phát thuốc cho người dân ở xã Châu Thành.',
     date: '18/12/2025',
-    image: 'https://images.baoangiang.com.vn/image/fckeditor/upload/2025/20251218/images/Kham%20mat.jpg',
+    image: "https://images.baoangiang.com.vn/image/fckeditor/upload/2025/20251218/images/Kham%20mat.jpg",
     url: 'https://baoangiang.com.vn/tam-soat-benh-ve-mat-mien-phi-cho-300-nguoi-dan-xa-chau-thanh-a470711.html'
   },
   {
@@ -223,7 +187,7 @@ export const pressItems: PressItem[] = [
     title: 'Khám mắt và cấp phát thuốc miễn phí cho 600 người dân xã Nhơn Mỹ',
     summary: 'Ngày 28/7, gần 200 hội viên nông dân, người cao tuổi và các gia đình có hoàn cảnh khó khăn, mắc bệnh về mắt ở xã Nhơn Mỹ (An Giang) được khám, tư vấn và cấp thuốc miễn phí.',
     date: '28/07/2026',
-    image: 'https://images.baoangiang.com.vn/image/fckeditor/upload/2026/20260728/images/HC-NMOKDjc-logo-20260728-115942-1.jpg',
+    image: "https://images.baoangiang.com.vn/image/fckeditor/upload/2026/20260728/images/HC-NMOKDjc-logo-20260728-115942-1.jpg",
     url: 'https://baoangiang.com.vn/kham-mat-va-cap-phat-thuoc-mien-phi-cho-600-nguoi-dan-xa-nhon-my-a493678.html'
   },
   {
@@ -233,7 +197,7 @@ export const pressItems: PressItem[] = [
     title: 'Khám mắt và phát thuốc miễn phí cho 150 người dân xã Bình An',
     summary: 'Sáng 6/6, Bệnh viện Mắt Sài Gòn Kiên Giang phối hợp Hội Nông dân tỉnh An Giang tổ chức khám các bệnh về mắt và phát thuốc miễn phí cho 150 người dân xã Bình An.',
     date: '06/06/2026',
-    image: 'https://images.baoangiang.com.vn/image/fckeditor/upload/2026/20260606/images/kham%20mat%201_.jpg',
+    image: "https://images.baoangiang.com.vn/image/fckeditor/upload/2026/20260606/images/kham%20mat%201_.jpg",
     url: 'https://baoangiang.com.vn/kham-mat-va-phat-thuoc-mien-phi-cho-150-nguoi-dan-xa-binh-an-a488040.html'
   }
 ];
@@ -296,18 +260,18 @@ export const stationsTimeline: TimelineStation[] = [
   }
 ];
 
-
 export const hospitalInfo = {
   name: 'Bệnh viện Mắt Sài Gòn Kiên Giang',
-  address: 'Số 228 Nguyễn Trung Trực, P. Vĩnh Lạc, TP. Rạch Giá, Tỉnh Kiên Giang',
-  phone: '038 849 8969',
-  hotline: '038 849 8969',
-  email: 'contact.msgkg@matsaigon.com', // <-- Email mới
-  website: 'https://matsaigonkiengiang.com/', // <-- Website mới
-  workingHours: '7h30 - 16h00 (Thứ 2 - Thứ 6)  7h30 - 11h30 (Thứ 7)',
+  address: 'Số 300 Nguyễn Trung Trực, P. Vĩnh Lạc, TP. Rạch Giá, Tỉnh Kiên Giang',
+  phone: '0297 3808 080',
+  hotline: '0939 123 456',
+  email: 'contact.msgkg@matsaigon.com',
+  website: 'https://matsaigonkiengiang.com/',
+  workingHours: '7h30 - 16h00 Thứ 2 - Thứ 7 | 7h30 - 11h30 Chủ nhật',
   socials: {
-    facebook: 'https://www.facebook.com/matsaigonkiengiang', // <-- Link Facebook mới
-    tiktok: 'https://www.tiktok.com/@matsaigonkiengiang',   // <-- Link TikTok mới
+    facebook: 'https://www.facebook.com/matsaigonkiengiang',
+    tiktok: 'https://www.tiktok.com/@matsaigonkiengiang',
     website: 'https://matsaigonkiengiang.com/'
   }
 };
+
