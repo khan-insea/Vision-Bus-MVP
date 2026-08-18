@@ -197,6 +197,11 @@ function Footer() {
 
         </div>
 
+        {/* Designer Credit */}
+        <div id="footer-designer-credit" className="text-center text-xs text-slate-400 font-medium pb-6">
+          Thiết kế bởi <span className="text-slate-200 font-semibold">A96 Agency</span>
+        </div>
+
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div>

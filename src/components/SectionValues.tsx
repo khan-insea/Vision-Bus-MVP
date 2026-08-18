@@ -30,7 +30,7 @@ function SectionValues() {
       </div>
 
       {/* Layer 3: Content Layer (Top - Foreground) */}
-      <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
         {/* Heading #0F172A */}
         <motion.h4
@@ -49,7 +49,7 @@ function SectionValues() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.3 }}
-          className="text-[#334155] text-sm sm:text-lg md:text-xl font-medium leading-relaxed max-w-3xl mx-auto mb-10 drop-shadow-sm"
+          className="text-[#334155] text-base sm:text-xl md:text-2xl font-medium leading-relaxed max-w-5xl lg:max-w-6xl mx-auto mb-10 drop-shadow-sm"
         >
           Vision Bus không chỉ mang y tế đến gần hơn với cộng đồng. Chúng tôi mang theo{' '}
           <strong className="text-primary font-extrabold">

@@ -80,7 +80,7 @@ function Hero({ onOpenBooking }: HeroProps) {
                 transition={{ duration: 0.3 }}
                 className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed max-w-xl font-normal"
               >
-                Hành trình đưa dịch vụ nhãn khoa chất lượng cao trực thuộc Bệnh viện Mắt Sài Gòn Kiên Giang đến tận từng huyện xã, hải đảo vùng xa.
+                Hành trình đưa dịch vụ nhãn khoa chất lượng cao trực thuộc Bệnh viện Mắt Sài Gòn Kiên Giang đến tận từng huyện xã, vùng xa.
               </motion.p>
             </div>
 

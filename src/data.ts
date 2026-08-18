@@ -262,9 +262,9 @@ export const stationsTimeline: TimelineStation[] = [
 
 export const hospitalInfo = {
   name: 'Bệnh viện Mắt Sài Gòn Kiên Giang',
-  address: 'Số 300 Nguyễn Trung Trực, P. Vĩnh Lạc, TP. Rạch Giá, Tỉnh Kiên Giang',
-  phone: '0297 3808 080',
-  hotline: '0939 123 456',
+  address: 'Số 228 Đường 3 Tháng 2, Phường Rạch Giá, Tỉnh An Giang',
+  phone: '0388 498 969',
+  hotline: '0388 498 969',
   email: 'contact.msgkg@matsaigon.com',
   website: 'https://matsaigonkiengiang.com/',
   workingHours: '7h30 - 16h00 Thứ 2 - Thứ 7 | 7h30 - 11h30 Chủ nhật',

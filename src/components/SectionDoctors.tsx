@@ -20,12 +20,13 @@ function SectionDoctors() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14 lg:mb-20">
+        <div className="text-center max-w-5xl lg:max-w-6xl mx-auto mb-8 sm:mb-14 lg:mb-20">
           <h4 className="text-xl sm:text-3xl lg:text-4xl font-extrabold font-heading text-dark tracking-tight leading-tight whitespace-nowrap">
             Những Người Giữ Ánh Sáng
           </h4>
-          <p className="text-slate-600 text-base sm:text-lg mt-2 max-w-xl mx-auto font-medium">
-            Gặp gỡ những bác sĩ chuyên khoa nhãn khoa đầu ngành của Mắt Sài Gòn luôn tận tâm đồng hành trên mọi dặm hành trình lưu động.
+          <p className="text-slate-600 text-base sm:text-lg mt-2 max-w-5xl lg:max-w-6xl mx-auto font-medium leading-relaxed">
+            Gặp gỡ những bác sĩ chuyên khoa nhãn khoa đầu ngành của Mắt Sài Gòn <br className="hidden sm:inline" />
+            luôn tận tâm đồng hành trên mọi dặm hành trình lưu động.
           </p>
         </div>
 

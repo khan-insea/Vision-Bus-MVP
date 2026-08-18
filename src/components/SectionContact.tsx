@@ -111,8 +111,8 @@ function SectionContact() {
                     <div>
                       <h5 className="font-bold text-xs text-slate-400 uppercase tracking-wider mb-0.5">Thời gian hoạt động</h5>
                       <p className="text-slate-700 font-semibold text-xs leading-normal">
-                        7h30 - 16h00 (Thứ 2 - Thứ 6)<br />
-                        7h30 - 11h30 (Thứ 7)
+                        7h30 - 16h00 Thứ 2 - Thứ 7<br />
+                        7h30 - 11h30 Chủ nhật
                       </p>
                     </div>
                   </div>
