@@ -4,6 +4,7 @@ export { default as doctorThu } from './doctors/doctor_thu.svg';
 export { default as doctorPhap } from './doctors/doctor_phap-removebg.png';
 export { default as doctorTrang } from './doctors/doctor_trang-removebg.png';
 
+export { default as banner2 } from './banner2.jpg';
 export { default as heroLandscape } from './hero/hero_img_1_11zon.webp';
 export { default as galleryBus } from './gallery/bus.jpg';
 export { default as bus } from './gallery/bus.jpg';
