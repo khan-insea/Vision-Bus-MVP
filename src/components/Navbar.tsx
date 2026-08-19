@@ -4,7 +4,7 @@
  */
 
 import { useState, useEffect, useCallback, memo } from 'react';
-import { Menu, X, Phone, Calendar } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { FullLogo } from './Logo';
 
@@ -134,19 +134,11 @@ function Navbar({ onOpenBooking }: NavbarProps) {
             <a
               id="navbar-contact-btn"
               href="tel:0388498969"
-              className="flex items-center justify-center gap-1.5 xl:gap-2 px-3.5 lg:px-4 xl:px-5 h-[42px] xl:h-[46px] 2xl:h-[48px] bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white text-xs lg:text-[13px] xl:text-sm 2xl:text-[16px] font-semibold rounded-full shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer whitespace-nowrap shrink-0"
+              className="flex items-center justify-center gap-1.5 xl:gap-2 px-4 lg:px-5 xl:px-6 h-[42px] xl:h-[46px] 2xl:h-[48px] bg-gradient-to-r from-primary to-secondary text-white hover:brightness-105 text-xs lg:text-[13px] xl:text-sm 2xl:text-[16px] font-semibold rounded-full shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer whitespace-nowrap shrink-0"
             >
               <Phone className="w-3.5 h-3.5 xl:w-[18px] xl:h-[18px] shrink-0" />
-              <span>Liên hệ</span>
+              <span>Liên hệ: 0388 498 969</span>
             </a>
-            <button
-              id="navbar-cta-btn"
-              onClick={onOpenBooking}
-              className="flex items-center justify-center gap-1.5 xl:gap-2 px-4 lg:px-5 xl:px-6 h-[42px] xl:h-[46px] 2xl:h-[48px] bg-gradient-to-r from-primary to-secondary hover:shadow-md hover:scale-[1.02] active:scale-[0.98] text-white text-xs lg:text-[13px] xl:text-sm 2xl:text-[16px] font-semibold rounded-full transition-all duration-200 cursor-pointer whitespace-nowrap shrink-0"
-            >
-              <Calendar className="w-3.5 h-3.5 xl:w-[18px] xl:h-[18px] shrink-0" />
-              <span>Đăng ký khám</span>
-            </button>
           </div>
 
           {/* Mobile & Tablet Actions - Zone 3 (Right - Mobile/Tablet) */}
@@ -160,16 +152,6 @@ function Navbar({ onOpenBooking }: NavbarProps) {
               <span className="hidden sm:inline">0388 498 969</span>
               <span className="sm:hidden">Hotline</span>
             </a>
-            <button
-              id="navbar-cta-btn-mobile"
-              onClick={onOpenBooking}
-              className="flex items-center justify-center gap-1.5 px-3 sm:px-4 py-1.5 bg-gradient-to-r from-primary to-secondary text-white text-xs sm:text-sm font-bold rounded-full shadow hover:brightness-105 active:scale-95 transition-all cursor-pointer"
-              aria-label="Đăng ký khám"
-            >
-              <Calendar className="w-3.5 h-3.5 shrink-0" />
-              <span className="hidden sm:inline">Đăng ký khám</span>
-              <span className="sm:hidden">Khám</span>
-            </button>
             <button
               id="mobile-menu-toggle"
               onClick={() => setIsMobileMenuOpen(true)}

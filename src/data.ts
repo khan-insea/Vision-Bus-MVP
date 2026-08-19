@@ -102,7 +102,7 @@ export const getSpecificAssetImage = (keywords: string[], fallbackImage: string)
 export const doctorsData: Doctor[] = [
   {
     id: 'doc1',
-    name: 'BS. Lê Viết Pháp',
+    name: 'BSNT. Lê Viết Pháp',
     role: 'Phó Giám Đốc Chuyên Môn',
     specialty: 'Bệnh Viện Mắt Sài Gòn Kiên Giang',
     image: doctorPhap,

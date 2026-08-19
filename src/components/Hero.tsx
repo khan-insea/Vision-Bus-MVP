@@ -5,7 +5,7 @@
 
 import { useCallback, useMemo, memo } from 'react';
 import { motion } from 'motion/react';
-import { MousePointerClick, Play, PhoneCall, Bus, Sparkles, HeartHandshake } from 'lucide-react';
+import { MousePointerClick, Play, PhoneCall, HeartHandshake } from 'lucide-react';
 import { heroLandscape, bus } from '../assets/images';
 import { getSpecificAssetImage } from '../data';
 
@@ -44,17 +44,6 @@ function Hero({ onOpenBooking }: HeroProps) {
           {/* Main Hero Header */}
           <div className="lg:col-span-7 text-left space-y-4 sm:space-y-6">
             
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-              className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/80 border border-primary/20 text-primary text-xs sm:text-sm font-bold shadow-sm"
-            >
-              <Bus className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-primary shrink-0" />
-              <span className="truncate">Dự Án Y Tế Xe Khám Mắt Lưu Động</span>
-              <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent shrink-0" />
-            </motion.div>
-
             <div className="space-y-2 sm:space-y-3">
               <motion.h1
                 initial={{ opacity: 0, y: 10 }}

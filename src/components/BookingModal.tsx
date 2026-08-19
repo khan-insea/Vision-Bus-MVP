@@ -42,7 +42,7 @@ function BookingModal({ isOpen, onClose, preselectedStationId }: BookingModalPro
 
   const handleSubmit = useCallback((e: FormEvent) => {
     e.preventDefault();
-    if (!formData.fullName || !formData.phone || !formData.age || !formData.stationId) {
+    if (!formData.fullName || !formData.phone || !formData.age) {
       alert('Vui lòng điền đầy đủ các thông tin bắt buộc.');
       return;
     }
@@ -57,7 +57,7 @@ function BookingModal({ isOpen, onClose, preselectedStationId }: BookingModalPro
       const randomId = Math.floor(10000 + Math.random() * 90000);
       setTicketId(`VB-26-${randomId}`);
     }, 1200);
-  }, [formData.fullName, formData.phone, formData.age, formData.stationId]);
+  }, [formData.fullName, formData.phone, formData.age]);
 
   const selectedStation = useMemo(() => {
     return stationsTimeline.find(s => s.id === formData.stationId);
@@ -205,54 +205,6 @@ function BookingModal({ isOpen, onClose, preselectedStationId }: BookingModalPro
                     </div>
                   </div>
 
-                  {/* Choose Station */}
-                  <div>
-                    <label className="block text-slate-700 text-xs font-bold mb-1.5" htmlFor="stationId">
-                      Địa điểm khám (Trạm dừng) <span className="text-red-500">*</span>
-                    </label>
-                    <div className="relative">
-                      <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400">
-                        <MapPin className="w-4 h-4" />
-                      </span>
-                      <select
-                        name="stationId"
-                        id="stationId"
-                        required
-                        value={formData.stationId}
-                        onChange={handleChange}
-                        className="w-full pl-10 pr-4 py-2.5 bg-slate-50/50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:bg-white transition-all duration-200 appearance-none cursor-pointer"
-                      >
-                        {stationsTimeline.map(station => (
-                          <option key={station.id} value={station.id}>
-                            [{station.date}] {station.location}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-
-                  {/* Preferred Time */}
-                  <div>
-                    <label className="block text-slate-700 text-xs font-bold mb-1.5" htmlFor="preferredTime">
-                      Khung giờ mong muốn
-                    </label>
-                    <div className="relative">
-                      <span className="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400">
-                        <Calendar className="w-4 h-4" />
-                      </span>
-                      <select
-                        name="preferredTime"
-                        id="preferredTime"
-                        value={formData.preferredTime}
-                        onChange={handleChange}
-                        className="w-full pl-10 pr-4 py-2.5 bg-slate-50/50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:bg-white transition-all duration-200 appearance-none cursor-pointer"
-                      >
-                        <option value="Sáng (07:30 - 11:30)">Buổi Sáng (07:30 - 11:30)</option>
-                        <option value="Chiều (13:30 - 16:30)">Buổi Chiều (13:30 - 16:30)</option>
-                      </select>
-                    </div>
-                  </div>
-
                   {/* Notes */}
                   <div>
                     <label className="block text-slate-700 text-xs font-bold mb-1.5" htmlFor="notes">
@@ -261,11 +213,11 @@ function BookingModal({ isOpen, onClose, preselectedStationId }: BookingModalPro
                     <textarea
                       name="notes"
                       id="notes"
-                      rows={2}
+                      rows={3}
                       value={formData.notes}
                       onChange={handleChange}
-                      placeholder="Ví dụ: Mắt mờ đã 1 năm, nghi ngờ đục thủy tinh thể..."
-                      className="w-full px-4 py-2 bg-slate-50/50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:bg-white transition-all duration-200 resize-none"
+                      placeholder="Ví dụ: Mắt mờ, nhìn lóa, nghi ngờ đục thủy tinh thể..."
+                      className="w-full px-4 py-2.5 bg-slate-50/50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:bg-white transition-all duration-200 resize-none"
                     />
                   </div>
 
@@ -373,22 +325,16 @@ function BookingModal({ isOpen, onClose, preselectedStationId }: BookingModalPro
                     </div>
 
                     <div>
-                      <span className="block text-[10px] uppercase text-slate-400 tracking-wider">Địa điểm khám</span>
+                      <span className="block text-[10px] uppercase text-slate-400 tracking-wider">Chương trình</span>
                       <span className="text-xs font-semibold text-slate-700 flex items-start gap-1 mt-0.5">
-                        <MapPin className="w-3.5 h-3.5 text-red-500 shrink-0 mt-0.5" />
-                        <span>{selectedStation?.location || 'Trạm lưu động'}</span>
+                        <MapPin className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
+                        <span>Khám mắt lưu động miễn phí - Vision Bus</span>
                       </span>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-4 border-t border-slate-100 pt-3">
-                      <div>
-                        <span className="block text-[10px] uppercase text-slate-400 tracking-wider">Ngày khám</span>
-                        <span className="text-xs font-semibold text-slate-700">{selectedStation?.date}</span>
-                      </div>
-                      <div>
-                        <span className="block text-[10px] uppercase text-slate-400 tracking-wider">Khung giờ</span>
-                        <span className="text-xs font-semibold text-slate-700">{formData.preferredTime}</span>
-                      </div>
+                    <div className="border-t border-slate-100 pt-3">
+                      <span className="block text-[10px] uppercase text-slate-400 tracking-wider">Hình thức tiếp nhận</span>
+                      <span className="text-xs font-semibold text-slate-700">Nhân viên y tế sẽ liên hệ hướng dẫn lịch khám chi tiết</span>
                     </div>
                   </div>
 

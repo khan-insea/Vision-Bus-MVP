@@ -65,7 +65,7 @@ function Footer() {
             </a>
             
             <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm">
-              Chương trình y tế cộng đồng lưu động thuộc <strong className="text-white font-semibold">Bệnh viện Mắt Sài Gòn Kiên Giang</strong>. Mang dịch vụ nhãn khoa chất lượng cao đến tận các vùng sâu, vùng xa Kiên Giang.
+              Chương trình y tế cộng đồng lưu động thuộc <strong className="text-white font-semibold">Bệnh viện Mắt Sài Gòn Kiên Giang</strong>. Mang dịch vụ nhãn khoa chất lượng cao đến tận các vùng sâu, xã đảo Kiên Giang.
             </p>
 
             <div className="pt-2">
@@ -198,19 +198,16 @@ function Footer() {
         </div>
 
         {/* Designer Credit */}
-        <div id="footer-designer-credit" className="text-center text-xs text-slate-400 font-medium pb-6">
-          Thiết kế bởi <span className="text-slate-200 font-semibold">A96 Agency</span>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <div>
-            &copy; {new Date().getFullYear()} Vision Bus - Bệnh viện Mắt Sài Gòn Kiên Giang. Tất cả quyền được bảo lưu.
-          </div>
-          <div className="flex items-center gap-1.5">
-            <span>Đồng hành thắp sáng đôi mắt Việt</span>
-            <span className="text-red-500">❤️</span>
-          </div>
+        <div id="footer-designer-credit" className="text-center text-xs text-slate-400 font-medium pt-8 border-t border-white/10">
+          Thiết kế bởi{' '}
+          <a
+            href="https://www.facebook.com/a96agency2026"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-200 font-semibold hover:text-primary hover:underline underline-offset-2 transition-colors inline-block"
+          >
+            A96 Agency
+          </a>
         </div>
 
       </div>
