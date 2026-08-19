@@ -15,9 +15,9 @@ interface SectionNextStationsProps {
 
 /**
  * Calculates station status based on current date:
- * - 'completed' (Đã kết thúc): passed the station date
- * - 'current' (Đang diễn ra): within 2 days before station date up to station date
- * - 'upcoming' (Sắp diễn ra): more than 2 days before station date
+ * - 'completed' (Đã kết thúc): qua ngày diễn ra (diffDays < 0)
+ * - 'current' (Đang diễn ra): đúng ngay ngày diễn ra (diffDays === 0)
+ * - 'upcoming' (Sắp diễn ra): trước ngày diễn ra (diffDays > 0)
  */
 function getStationStatus(station: TimelineStation): 'completed' | 'current' | 'upcoming' {
   if (station.status) return station.status;
@@ -48,11 +48,11 @@ function getStationStatus(station: TimelineStation): 'completed' | 'current' | '
   const eventDate = new Date(year, month, day);
 
   const diffTime = eventDate.getTime() - today.getTime();
-  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  const diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24));
 
   if (diffDays < 0) {
     return 'completed';
-  } else if (diffDays <= 2) {
+  } else if (diffDays === 0) {
     return 'current';
   } else {
     return 'upcoming';

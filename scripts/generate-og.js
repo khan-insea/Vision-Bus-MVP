@@ -2,14 +2,14 @@ import fs from 'fs';
 import path from 'path';
 
 async function generateOGImage() {
-  const sourceBannerPath = path.join(process.cwd(), 'src/assets/images/banner.png');
+  const sourceBannerPath = path.join(process.cwd(), 'src/assets/images/banner2.jpg');
   const publicDir = path.join(process.cwd(), 'public');
 
   if (!fs.existsSync(publicDir)) {
     fs.mkdirSync(publicDir, { recursive: true });
   }
 
-  const targetBannerPath = path.join(publicDir, 'banner.png');
+  const targetBannerPath = path.join(publicDir, 'banner2.jpg');
   const targetOgJpgPath = path.join(publicDir, 'og-image.jpg');
 
   // Clean up legacy og-image.jpg if it exists
